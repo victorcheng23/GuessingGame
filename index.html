@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="game-window">
+      <div id="game-header">
+        <h1>Guessing Game</h1>
+      </div>
+      <div id="game-body">
+          <div id="message-container">
+            <h2 id="game-message">Guess a number from 1 to 100</h2>
+          </div>
+        <div id="input-container">
+            <input id="guess-input" type="text" placeholder="#" maxlength="3"></input>
+        </div>
+        <div id="attempt-row">
+            <div class="attempt"><i id= "arrow-1" class="fa"></i><div id="guess-1">•</div></div>
+            <div class="attempt"><i id= "arrow-2" class="fa"></i><div id="guess-2">•</div></div>
+            <div class="attempt"><i id= "arrow-3" class="fa"></i><div id="guess-3">•</div></div>
+            <div class="attempt"><i id= "arrow-4" class="fa"></i><div id="guess-4">•</div></div>
+            <div class="attempt"><i id= "arrow-5" class="fa"></i><div id="guess-5">•</div></div>
+        </div>
+      </div>
+      <div id="button-row">
+          <button id="hint">Hint <i class="fa fa-question"></i></button><button id="guess">Guess <i class="fa fa-arrow-right"></i></button><button id="reset">Reset <i class="fa fa-refresh"></i></button>
+      </div>
+    </div>
+    <script src='guessing-game.js'></script>
+  </body>
+</html>

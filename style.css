@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik:400,500|Varela+Round&display=swap");
+
+::selection {
+  background-color: transparent;
+}
+
+html {
+  background: linear-gradient(transparent, #079efc),
+    url(numbers-background.png) repeat;
+  background-color: #00cbff;
+  height: 100%;
+  overflow: hidden;
+}
+
+html,
+body,
+#game-header,
+#attempt-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game-window {
+  filter: drop-shadow(0 6px 4px rgba(0, 0, 0, 0.15));
+  font-family: "Rubik";
+  font-weight: 400;
+  color: #ccc;
+  text-align: center;
+  width: 600px;
+  height: 500px;
+  border-radius: 70px;
+}
+
+#game-header {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 70px 70px 0 0;
+  height: 90px;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+#game-body {
+  background-color: #fff;
+  height: 300px;
+}
+
+#message-container {
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0;
+}
+
+#game-message {
+  transition: opacity 0.3s ease;
+}
+
+#input-container {
+  height: 45%;
+}
+
+input {
+  font-family: "Varela Round";
+  color: #ccc;
+  border: none;
+  background-color: transparent;
+  font-size: 120px;
+  width: 80%;
+  height: 100%;
+  padding: 0;
+  text-align: center;
+  transition: color 0.4s ease, opacity 0.3s ease;
+}
+
+input::placeholder {
+  color: #ccc;
+  transition: color 0.4s ease;
+}
+
+input:focus::placeholder {
+  color: transparent;
+  outline: none;
+  transition: color 0.4s ease;
+}
+
+input::selection {
+  background-color: #00cbff;
+  color: #fff;
+}
+
+input:focus {
+  color: #888;
+  outline: none;
+  transition: color 0.4s ease;
+}
+
+button {
+  font-family: "Rubik";
+  color: #ccc;
+  font-size: 25px;
+  font-weight: 500;
+  background-color: #f7f7f7;
+  border: none;
+  height: 90px;
+  border-top: 1px solid rgba(0, 0, 0, 0.02);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 0 #fff;
+  transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+button:hover {
+  color: #a7a7a7;
+  background-color: #e6e6e6;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+button:active {
+  color: #a7a7a7;
+  background-color: #dedede;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+button:focus {
+  outline: none;
+}
+
+#hint {
+  width: 30%;
+  border-radius: 0 0 0 70px;
+  padding-left: 20px;
+}
+
+#guess {
+  width: 40%;
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#reset {
+  width: 30%;
+  border-radius: 0 0 70px 0;
+  padding-right: 20px;
+}
+
+#attempt-row {
+  height: 30%;
+  transition: opacity 0.3s ease;
+}
+
+.attempt {
+  font-size: 30px;
+  width: 17%;
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait),
+  screen and (max-height: 450px) and (orientation: landscape) {
+  body,
+  #game-window {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  button {
+    height: 100%;
+  }
+
+  h1 {
+    font-size: 10vw;
+  }
+
+  #game-body {
+    height: 65%;
+  }
+
+  #game-header {
+    height: 15%;
+  }
+
+  #game-header,
+  #hint,
+  #reset {
+    border-radius: 0;
+  }
+
+  #game-message {
+    font-size: 7vw;
+    padding: 0 5%;
+    width: 100%;
+  }
+
+  #button-row {
+    height: 20%;
+  }
+}
+
+@media screen and (max-width: 500px) and (orientation: portrait) {
+  input {
+    font-size: 30vw;
+  }
+
+  button,
+  .attempt {
+    font-size: 7vw;
+  }
+
+  button .fa {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 450px) and (orientation: landscape) {
+  h1 {
+    font-size: 5vw;
+  }
+
+  #game-message {
+    font-size: 4.5vw;
+  }
+
+  input {
+    font-size: 15vw;
+  }
+
+  button,
+  .attempt {
+    font-size: 3.5vw;
+  }
+}
